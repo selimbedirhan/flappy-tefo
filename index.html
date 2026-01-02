@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="Flappy Cat - Kanatlı kediyi kontrol et ve engelleri aş!">
+    <meta name="theme-color" content="#1a1a2e">
+    <title>Flappy Cat 🐱✨</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Outfit:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Background Gradient Overlay -->
+    <div class="bg-gradient"></div>
+
+    <!-- Animated Stars Background -->
+    <div class="stars" id="stars"></div>
+
+    <!-- Game Container -->
+    <div class="game-container">
+        <!-- Game Canvas -->
+        <canvas id="gameCanvas"></canvas>
+
+        <!-- Start Screen -->
+        <div class="overlay" id="startScreen">
+            <div class="title-container">
+                <h1 class="game-title">
+                    TEFO Flappy Bird
+                </h1>
+                <p class="subtitle">Tefo'yu kontrol et!</p>
+            </div>
+
+            <div class="cat-preview" id="catPreview"></div>
+
+            <button class="btn btn-primary pulse" id="startBtn">
+                <span class="btn-icon">▶</span>
+                Oyna
+            </button>
+
+            <div class="instructions">
+                <div class="instruction-item">
+                    <span class="key">Space</span>
+                    <span>veya</span>
+                    <span class="key">Tıkla</span>
+                    <span>Zıpla</span>
+                </div>
+            </div>
+
+            <div class="high-score-display" id="highScoreDisplay">
+                <span class="trophy">🏆</span>
+                <span>En Yüksek: </span>
+                <span id="highScoreValue">0</span>
+            </div>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div class="overlay hidden" id="gameOverScreen">
+            <div class="game-over-container">
+                <h2 class="game-over-title">Oyun Bitti!</h2>
+
+                <div class="score-card">
+                    <div class="score-row">
+                        <span class="score-label">Skor</span>
+                        <span class="score-value" id="finalScore">0</span>
+                    </div>
+                    <div class="score-row highlight">
+                        <span class="score-label">
+                            <span class="trophy">🏆</span>
+                            En Yüksek
+                        </span>
+                        <span class="score-value" id="finalHighScore">0</span>
+                    </div>
+                </div>
+
+                <div class="new-record hidden" id="newRecord">
+                    <span>🎉</span> Yeni Rekor! <span>🎉</span>
+                </div>
+
+                <div class="game-over-buttons">
+                    <button class="btn btn-primary" id="restartBtn">
+                        <span class="btn-icon">🔄</span>
+                        Tekrar Oyna
+                    </button>
+                    <button class="btn btn-secondary" id="shareBtn">
+                        <span class="btn-icon">📤</span>
+                        Paylaş
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- In-Game UI -->
+        <div class="game-ui" id="gameUI">
+            <div class="score-display" id="scoreDisplay">0</div>
+        </div>
+
+        <!-- Pause Button -->
+        <button class="pause-btn" id="pauseBtn">⏸</button>
+
+        <!-- Pause Screen -->
+        <div class="overlay hidden" id="pauseScreen">
+            <div class="pause-container">
+                <h2 class="pause-title">Duraklatıldı</h2>
+                <button class="btn btn-primary" id="resumeBtn">
+                    <span class="btn-icon">▶</span>
+                    Devam Et
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio Toggle -->
+    <button class="audio-toggle" id="audioToggle">
+        <span class="audio-on">🔊</span>
+        <span class="audio-off hidden">🔇</span>
+    </button>
+
+    <!-- Credits -->
+    <div class="credits">
+        Made with 💜 | Flappy Cat 2026
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/audio.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/bird.js"></script>
+    <script src="js/pipes.js"></script>
+    <script src="js/game.js"></script>
+</body>
+
+</html>
